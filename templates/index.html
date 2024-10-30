@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}">
+    <img src="{{ url_for('static', filename='my_img.png') }}">
+    <title>First Flask</title>
+</head>
+    <form action="/create_friend" method=-"post">
+        <h1>All my Friends</h1>
+            <table>
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname">
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname">
+                <label for="occ" >Occupation:</label>
+                <input type="text" name="occ">
+                <input type="submit" value="Add Friend">
+                {% for one_friend in all_friends() %}
+                    <p>First Name{{one-friend.first_name}}</p>
+                    <p>Last Name{{one_friend.last_name}}</p>
+                    <p>Occupation{{one_friend.Occupation}}</p>
+                {% endfor %}
+            </table>
+        </form>
+
+
+
+
+
+
+</body>
+    <script type="text/javascript" src="{{ url_for('static', filename='my_script.js') }}"></script>
+</html>
